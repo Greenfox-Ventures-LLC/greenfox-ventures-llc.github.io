@@ -39,6 +39,22 @@
   ]
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoGame",
+  "name": "Cavernum",
+  "description": "A number-matching puzzle game for iOS and Android, set in a hand-painted cave world. Pair adjacent tiles of equal value or summing to ten and clear your way through the mine.",
+  "genre": "Puzzle",
+  "applicationCategory": "Game",
+  "operatingSystem": ["iOS", "Android"],
+  "publisher": {
+    "@type": "Organization",
+    "name": "Greenfox Ventures LLC",
+    "url": "https://greenfoxventuresllc.com"
+  }
+}
+</script>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
 
@@ -463,7 +479,6 @@
 </main>
 
 <script>
-  // Obfuscated email reveal — avoids raw scrapable mailto addresses in source
   document.querySelectorAll('.contact-link[data-user]').forEach(function(link) {
     link.addEventListener('click', function(e) {
       e.preventDefault();
@@ -472,16 +487,13 @@
       const address = user + '@' + domain;
       this.querySelector('.email-value').textContent = address;
       this.setAttribute('href', 'mailto:' + address);
-      // second click (now that href is set) will proceed as a normal mailto link
     });
   });
 
-  // Expandable project card
   document.getElementById('cavernum-card').addEventListener('click', function() {
     this.classList.toggle('open');
   });
 
-  // Scroll-reveal for sections
   const sections = document.querySelectorAll('section:not(#home)');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -490,7 +502,6 @@
   }, { threshold: 0.15 });
   sections.forEach(s => observer.observe(s));
 
-  // Active nav-link tracking
   const navLinks = document.querySelectorAll('.nav-link');
   const navObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
