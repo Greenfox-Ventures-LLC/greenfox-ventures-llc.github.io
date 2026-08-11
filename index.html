@@ -131,25 +131,44 @@
     z-index: 1;
     max-width: 780px;
     margin: 0 auto;
-    padding: 0 28px 100px 28px;
+    padding: 68px 28px 100px 28px;
   }
   @media (min-width: 721px) {
     main { padding-left: 92px; }
   }
 
   header.top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 20;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 40px 0 0;
+    padding: 16px 28px;
     font-family: 'JetBrains Mono', monospace;
     font-size: 0.75rem;
     color: var(--muted);
     letter-spacing: 0.05em;
+    background: rgba(13, 18, 14, 0.85);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+  }
+  @media (min-width: 721px) {
+    header.top { padding-left: 92px; }
   }
   header.top .mark {
+    display: flex;
+    align-items: center;
+    gap: 10px;
     color: var(--ink);
     font-weight: 600;
+  }
+  header.top .mark img {
+    height: 32px;
+    width: auto;
+    display: block;
   }
 
   section {
@@ -162,7 +181,7 @@
   section.visible { opacity: 1; transform: translateY(0); }
   section:last-of-type { border-bottom: none; }
 
-  #home { padding-top: 110px; opacity: 1; transform: none; }
+  #home { padding-top: 70px; opacity: 1; transform: none; }
 
   .eyebrow {
     font-family: 'JetBrains Mono', monospace;
@@ -403,12 +422,14 @@
 
 <main>
   <header class="top">
-    <div class="mark">GREENFOX VENTURES</div>
+    <div class="mark">
+      <img src="greenfox-logo-transparent 2026-08-11.png" alt="Greenfox Ventures LLC">
+      GREENFOX VENTURES
+    </div>
     <div>STAMFORD, CT</div>
   </header>
 
   <section id="home">
-    <img src="greenfox-logo-transparent 2026-08-11.png" alt="Greenfox Ventures LLC logo" style="width: 100%; max-width: 320px; height: auto; margin-bottom: 32px; display: block;">
     <div class="eyebrow">Independent software studio</div>
     <h1>We build things worth finishing.</h1>
     <p class="lede">Greenfox Ventures LLC is a Connecticut-based studio. Small team, deliberate craft, no venture runway to burn &mdash; just software we'd want to use ourselves.</p>
