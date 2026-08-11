@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -40,6 +41,7 @@
   ]
 }
 </script>
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -56,6 +58,7 @@
   }
 }
 </script>
+
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
 
@@ -68,8 +71,17 @@
     --fox-dim: #5c5d34;
     --border: #22301f;
   }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     background: var(--bg);
     color: var(--ink);
@@ -97,17 +109,18 @@
     top: 0;
     left: 0;
     height: 100vh;
-    width: 150px;
+    width: 170px;
     display: flex;
     flex-direction: column;
     align-items: stretch;
     justify-content: center;
-    gap: 14px;
+    gap: 17px;
     z-index: 10;
     border-right: 1px solid var(--border);
     background: rgba(13, 18, 14, 0.4);
-    padding: 0 22px;
+    padding: 0 26px;
   }
+
   nav.rail .rail-logo {
     position: absolute;
     top: 28px;
@@ -116,21 +129,24 @@
     display: flex;
     justify-content: center;
   }
+
   nav.rail .rail-logo-chip {
-    width: 64px;
-    height: 64px;
-    border-radius: 14px;
+    width: 77px;
+    height: 77px;
+    border-radius: 17px;
     background: rgba(244, 242, 238, 0.92);
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 8px;
+    padding: 10px;
   }
+
   nav.rail .rail-logo-chip img {
     width: 100%;
     height: 100%;
     object-fit: contain;
   }
+
   nav.rail .rail-logo-bottom {
     position: absolute;
     bottom: 24px;
@@ -139,46 +155,56 @@
     display: flex;
     justify-content: center;
   }
+
   nav.rail .rail-logo-bottom-chip {
-    width: 40px;
-    height: 40px;
-    border-radius: 10px;
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
     background: rgba(244, 242, 238, 0.5);
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 6px;
+    padding: 7px;
     transition: background 0.2s ease;
   }
+
   nav.rail .rail-logo-bottom-chip:hover {
     background: rgba(244, 242, 238, 0.85);
   }
+
   nav.rail .rail-logo-bottom-chip img {
     width: 100%;
     height: 100%;
     object-fit: contain;
   }
+
   nav.rail a {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 0.72rem;
-    letter-spacing: 0.08em;
+    font-size: 0.864rem;
+    letter-spacing: 0.096em;
     color: var(--muted);
     text-decoration: none;
     text-transform: uppercase;
-    padding: 8px 0 8px 12px;
-    margin-top: 44px;
+    padding: 10px 0 10px 14px;
+    margin-top: 53px;
     border-left: 2px solid transparent;
     transition: color 0.2s ease, border-color 0.2s ease;
   }
+
   nav.rail a:not(:first-of-type) {
     margin-top: 0;
   }
-  nav.rail a:hover, nav.rail a.active {
+
+  nav.rail a:hover,
+  nav.rail a.active {
     color: var(--fox);
     border-color: var(--fox);
   }
+
   @media (max-width: 720px) {
-    nav.rail { display: none; }
+    nav.rail {
+      display: none;
+    }
   }
 
   main {
@@ -188,64 +214,82 @@
     margin: 0 auto;
     padding: 0 28px 100px 28px;
   }
+
   @media (min-width: 721px) {
-    main { padding-left: 178px; }
+    main {
+      padding-left: 198px;
+    }
   }
 
   header.top {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 40px 0 0;
+    padding: 48px 0 0;
     font-family: 'JetBrains Mono', monospace;
-    font-size: 0.75rem;
+    font-size: 0.9rem;
     color: var(--muted);
-    letter-spacing: 0.05em;
+    letter-spacing: 0.06em;
   }
+
   header.top .mark {
     color: var(--ink);
     font-weight: 600;
   }
 
   section {
-    padding: 64px 0;
+    padding: 77px 0;
     border-bottom: 1px solid var(--border);
     opacity: 0;
     transform: translateY(16px);
     transition: opacity 0.6s ease, transform 0.6s ease;
   }
-  section.visible { opacity: 1; transform: translateY(0); }
-  section:last-of-type { border-bottom: none; }
 
-  #home { padding-top: 110px; opacity: 1; transform: none; }
+  section.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  section:last-of-type {
+    border-bottom: none;
+  }
+
+  #home {
+    padding-top: 132px;
+    opacity: 1;
+    transform: none;
+  }
 
   .eyebrow {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 0.75rem;
+    font-size: 0.9rem;
     color: var(--fox);
-    letter-spacing: 0.1em;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
-    margin-bottom: 20px;
+    margin-bottom: 24px;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
   }
+
   .eyebrow::before {
     content: "";
-    width: 24px;
+    width: 29px;
     height: 1px;
     background: var(--fox);
   }
+
   h1 {
-    font-size: clamp(2.4rem, 6vw, 3.6rem);
+    font-size: clamp(2.88rem, 7.2vw, 4.32rem);
     font-weight: 700;
-    letter-spacing: -0.03em;
+    letter-spacing: -0.036em;
     line-height: 1.05;
     max-width: 11ch;
   }
+
   .lede {
-    margin-top: 28px;
-    font-size: 1.15rem;
+    margin-top: 34px;
+    font-size: 1.38rem;
     color: var(--muted);
     max-width: 46ch;
     line-height: 1.65;
@@ -253,26 +297,30 @@
 
   .section-label {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 0.75rem;
+    font-size: 0.9rem;
     color: var(--muted);
     text-transform: uppercase;
-    letter-spacing: 0.1em;
-    margin-bottom: 28px;
+    letter-spacing: 0.12em;
+    margin-bottom: 34px;
   }
 
   .bio {
-    font-size: 1.05rem;
+    font-size: 1.26rem;
     color: var(--muted);
     line-height: 1.75;
     max-width: 56ch;
   }
-  .bio strong { color: var(--ink); font-weight: 600; }
+
+  .bio strong {
+    color: var(--ink);
+    font-weight: 600;
+  }
 
   .origin {
-    margin-top: 20px;
-    padding-left: 20px;
+    margin-top: 24px;
+    padding-left: 24px;
     border-left: 2px solid var(--fox-dim);
-    font-size: 1.02rem;
+    font-size: 1.224rem;
     color: var(--muted);
     line-height: 1.7;
     max-width: 54ch;
@@ -282,88 +330,103 @@
     position: relative;
     border: 1px solid var(--border);
     background: linear-gradient(180deg, var(--bg-raise), var(--bg));
-    border-radius: 14px;
-    padding: 26px 28px;
+    border-radius: 17px;
+    padding: 31px 34px;
     cursor: pointer;
     transition: border-color 0.25s ease, transform 0.25s ease;
     overflow: hidden;
   }
+
   .product:hover {
     border-color: var(--fox-dim);
     transform: translateY(-2px);
   }
+
   .product-top {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    gap: 16px;
-    margin-bottom: 10px;
+    gap: 19px;
+    margin-bottom: 12px;
   }
+
   .product-name {
-    font-size: 1.2rem;
+    font-size: 1.44rem;
     font-weight: 600;
-    letter-spacing: -0.01em;
+    letter-spacing: -0.012em;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
   }
+
   .chevron {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 0.9rem;
+    font-size: 1.08rem;
     color: var(--fox);
     transition: transform 0.3s ease;
     display: inline-block;
   }
-  .product.open .chevron { transform: rotate(90deg); }
+
+  .product.open .chevron {
+    transform: rotate(90deg);
+  }
+
   .status {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 0.68rem;
+    font-size: 0.816rem;
     color: var(--fox);
     border: 1px solid var(--fox-dim);
     background: rgba(255, 106, 43, 0.08);
     border-radius: 999px;
-    padding: 4px 10px;
+    padding: 5px 12px;
     white-space: nowrap;
-    letter-spacing: 0.03em;
+    letter-spacing: 0.036em;
   }
+
   .product-desc {
     color: var(--muted);
-    font-size: 0.98rem;
+    font-size: 1.176rem;
     line-height: 1.55;
     max-width: 52ch;
   }
+
   .product-detail {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.4s ease, margin-top 0.4s ease;
   }
+
   .product.open .product-detail {
     max-height: 300px;
-    margin-top: 18px;
+    margin-top: 22px;
   }
+
   .product-detail-inner {
     border-top: 1px solid var(--border);
-    padding-top: 18px;
+    padding-top: 22px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 12px;
   }
+
   .tag-row {
     display: flex;
-    gap: 8px;
+    gap: 10px;
     flex-wrap: wrap;
   }
+
   .tag {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 0.68rem;
+    font-size: 0.816rem;
     color: var(--muted);
     border: 1px solid var(--border);
     border-radius: 999px;
-    padding: 3px 10px;
+    padding: 4px 12px;
   }
+
   .product-detail p {
     color: var(--muted);
-    font-size: 0.92rem;
+    font-size: 1.104rem;
     line-height: 1.6;
     max-width: 50ch;
   }
@@ -375,56 +438,65 @@
     justify-content: center;
     color: var(--muted);
     font-family: 'JetBrains Mono', monospace;
-    font-size: 0.85rem;
-    padding: 20px;
+    font-size: 1.02rem;
+    padding: 24px;
     cursor: default;
   }
-  .product.placeholder:hover { transform: none; border-color: var(--border); }
+
+  .product.placeholder:hover {
+    transform: none;
+    border-color: var(--border);
+  }
 
   .contact-links {
-    margin-top: 24px;
+    margin-top: 29px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 12px;
     max-width: 400px;
   }
+
   .contact-link {
     display: flex;
     justify-content: space-between;
     align-items: center;
     border: 1px solid var(--border);
     background: linear-gradient(180deg, var(--bg-raise), var(--bg));
-    border-radius: 10px;
-    padding: 16px 20px;
+    border-radius: 12px;
+    padding: 19px 24px;
     text-decoration: none;
     transition: border-color 0.25s ease, transform 0.25s ease;
   }
+
   .contact-link:hover {
     border-color: var(--fox-dim);
     transform: translateX(4px);
   }
+
   .contact-link-label {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 0.72rem;
+    font-size: 0.864rem;
     color: var(--fox);
     text-transform: uppercase;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.096em;
   }
+
   .contact-link-value {
     color: var(--ink);
-    font-size: 0.95rem;
+    font-size: 1.14rem;
   }
 
   footer {
-    padding-top: 32px;
+    padding-top: 38px;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    gap: 16px;
+    gap: 19px;
     font-family: 'JetBrains Mono', monospace;
-    font-size: 0.82rem;
+    font-size: 0.984rem;
     color: var(--muted);
   }
+
   footer a {
     color: var(--ink);
     text-decoration: none;
@@ -432,20 +504,30 @@
     padding-bottom: 1px;
     transition: border-color 0.2s ease, color 0.2s ease;
   }
+
   footer a:hover {
     color: var(--fox);
     border-color: var(--fox);
   }
+
   footer .links {
     display: flex;
-    gap: 24px;
+    gap: 29px;
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .product, section, .glow, .chevron, .product-detail { transition: none; }
+    .product,
+    section,
+    .glow,
+    .chevron,
+    .product-detail {
+      transition: none;
+    }
   }
 </style>
+
 </head>
+
 <body>
 <div class="glow"></div>
 
@@ -455,10 +537,9 @@
       <img src="greenfox-logo-transparent 2026-08-11.png" alt="Greenfox Ventures LLC">
     </div>
   </div>
-  <a href="#home" class="nav-link active" data-target="home">Home</a>
-  <a href="#about" class="nav-link" data-target="about">Founder</a>
-  <a href="#projects" class="nav-link" data-target="projects">Projects</a>
-  <a href="#contact" class="nav-link" data-target="contact">Contact</a>
+
+<a href="#home" class="nav-link active" data-target="home">Home</a> <a href="#about" class="nav-link" data-target="about">Founder</a> <a href="#projects" class="nav-link" data-target="projects">Projects</a> <a href="#contact" class="nav-link" data-target="contact">Contact</a>
+
   <div class="rail-logo-bottom">
     <div class="rail-logo-bottom-chip">
       <img src="greenfox-logo-transparent 2026-08-11.png" alt="">
@@ -486,49 +567,77 @@
 
   <section id="projects">
     <div class="section-label">Projects</div>
-    <div class="product-grid" style="display:grid; gap:14px;">
-      <div class="product" id="cavernum-card">
-        <div class="product-top">
-          <div class="product-name"><span class="chevron">&rsaquo;</span>Cavernum</div>
-          <div class="status">In development</div>
-        </div>
-        <div class="product-desc">A number-matching puzzle game for iOS and Android, set in a hand-painted cave world.</div>
-        <div class="product-detail">
-          <div class="product-detail-inner">
-            <div class="tag-row">
-              <span class="tag">iOS</span>
-              <span class="tag">Android</span>
-              <span class="tag">React Native</span>
-              <span class="tag">Puzzle</span>
-            </div>
-            <p>Pair adjacent tiles of equal value or summing to ten, navigate voids, rocks, and locked gates, and clear your way deeper into the mine. Built for players who want their puzzle games to actually push back.</p>
-          </div>
-        </div>
+
+```
+<div class="product-grid" style="display:grid; gap:17px;">
+  <div class="product" id="cavernum-card">
+    <div class="product-top">
+      <div class="product-name">
+        <span class="chevron">&rsaquo;</span>Cavernum
       </div>
-      <div class="product placeholder">More on the way</div>
+      <div class="status">In development</div>
     </div>
+
+    <div class="product-desc">
+      A number-matching puzzle game for iOS and Android, set in a hand-painted cave world.
+    </div>
+
+    <div class="product-detail">
+      <div class="product-detail-inner">
+        <div class="tag-row">
+          <span class="tag">iOS</span>
+          <span class="tag">Android</span>
+          <span class="tag">React Native</span>
+          <span class="tag">Puzzle</span>
+        </div>
+
+        <p>
+          Pair adjacent tiles of equal value or summing to ten, navigate voids, rocks, and locked gates, and clear your way deeper into the mine. Built for players who want their puzzle games to actually push back.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="product placeholder">More on the way</div>
+</div>
+```
+
   </section>
 
   <section id="contact">
     <div class="section-label">Contact</div>
-    <p class="bio">Have a question, a bug report, or just want to say hi? Reach out directly.</p>
-    <div class="contact-links">
-      <a href="#" class="contact-link" data-user="alex" data-domain="greenfoxventuresllc.com">
-        <span class="contact-link-label">Email</span>
-        <span class="contact-link-value email-value">Click to reveal</span>
-      </a>
-      <a href="https://www.linkedin.com/in/alexander-furer/" class="contact-link">
-        <span class="contact-link-label">LinkedIn</span>
-        <span class="contact-link-value">alexander-furer</span>
-      </a>
-    </div>
+
+```
+<p class="bio">
+  Have a question, a bug report, or just want to say hi? Reach out directly.
+</p>
+
+<div class="contact-links">
+  <a href="#" class="contact-link" data-user="alex" data-domain="greenfoxventuresllc.com">
+    <span class="contact-link-label">Email</span>
+    <span class="contact-link-value email-value">Click to reveal</span>
+  </a>
+
+  <a href="https://www.linkedin.com/in/alexander-furer/" class="contact-link">
+    <span class="contact-link-label">LinkedIn</span>
+    <span class="contact-link-value">alexander-furer</span>
+  </a>
+</div>
+```
+
   </section>
 
   <footer>
     <div>&copy; 2026 Greenfox Ventures LLC</div>
-    <div class="links">
-      <a href="https://greenfox-ventures-llc.github.io/Cavernum-legal/">Privacy Policy</a>
-    </div>
+
+```
+<div class="links">
+  <a href="https://greenfox-ventures-llc.github.io/Cavernum-legal/">
+    Privacy Policy
+  </a>
+</div>
+```
+
   </footer>
 </main>
 
@@ -536,9 +645,11 @@
   document.querySelectorAll('.contact-link[data-user]').forEach(function(link) {
     link.addEventListener('click', function(e) {
       e.preventDefault();
+
       const user = this.getAttribute('data-user');
       const domain = this.getAttribute('data-domain');
       const address = user + '@' + domain;
+
       this.querySelector('.email-value').textContent = address;
       this.setAttribute('href', 'mailto:' + address);
     });
@@ -549,24 +660,39 @@
   });
 
   const sections = document.querySelectorAll('section:not(#home)');
+
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-      if (entry.isIntersecting) entry.target.classList.add('visible');
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
     });
-  }, { threshold: 0.15 });
+  }, {
+    threshold: 0.15
+  });
+
   sections.forEach(s => observer.observe(s));
 
   const navLinks = document.querySelectorAll('.nav-link');
+
   const navObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         navLinks.forEach(l => l.classList.remove('active'));
-        const active = document.querySelector('.nav-link[data-target="' + entry.target.id + '"]');
+
+        const active = document.querySelector(
+          '.nav-link[data-target="' + entry.target.id + '"]'
+        );
+
         if (active) active.classList.add('active');
       }
     });
-  }, { threshold: 0.5 });
+  }, {
+    threshold: 0.5
+  });
+
   document.querySelectorAll('section').forEach(s => navObserver.observe(s));
 </script>
+
 </body>
 </html>
