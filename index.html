@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
 
 <title>Greenfox Ventures LLC — Independent Software Studio</title>
@@ -10,25 +12,55 @@
   content="Greenfox Ventures LLC is a Connecticut-based independent software studio. Current work includes Cavernum, a number-matching puzzle game for iOS and Android."
 >
 
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1"
+>
 
-<meta property="og:title" content="Greenfox Ventures LLC">
+<meta
+  property="og:title"
+  content="Greenfox Ventures LLC"
+>
+
 <meta
   property="og:description"
   content="Independent software studio based in Stamford, Connecticut. Current work: Cavernum, a puzzle game for iOS and Android."
 >
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://greenfoxventuresllc.com">
 
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Greenfox Ventures LLC">
+<meta
+  property="og:type"
+  content="website"
+>
+
+<meta
+  property="og:url"
+  content="https://greenfoxventuresllc.com"
+>
+
+<meta
+  name="twitter:card"
+  content="summary"
+>
+
+<meta
+  name="twitter:title"
+  content="Greenfox Ventures LLC"
+>
+
 <meta
   name="twitter:description"
   content="Independent software studio based in Stamford, Connecticut."
 >
 
-<link rel="icon" href="greenfox-logo-transparent 2026-08-11.png">
-<link rel="canonical" href="https://greenfoxventuresllc.com">
+<link
+  rel="icon"
+  href="greenfox-logo-transparent 2026-08-11.png"
+>
+
+<link
+  rel="canonical"
+  href="https://greenfoxventuresllc.com"
+>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -37,6 +69,11 @@
   href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
   rel="stylesheet"
 >
+
+
+<!-- =====================================================
+     ORGANIZATION SCHEMA
+===================================================== -->
 
 <script type="application/ld+json">
 {
@@ -61,6 +98,11 @@
 }
 </script>
 
+
+<!-- =====================================================
+     CAVERNUM SCHEMA
+===================================================== -->
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -69,7 +111,10 @@
   "description": "A number-matching puzzle game for iOS and Android, set in a hand-painted cave world. Pair adjacent tiles of equal value or summing to ten and clear your way through the mine.",
   "genre": "Puzzle",
   "applicationCategory": "Game",
-  "operatingSystem": ["iOS", "Android"],
+  "operatingSystem": [
+    "iOS",
+    "Android"
+  ],
   "publisher": {
     "@type": "Organization",
     "name": "Greenfox Ventures LLC",
@@ -78,14 +123,21 @@
 }
 </script>
 
+
 <style>
 
+/* =====================================================
+   ROOT
+===================================================== */
+
 :root {
+
   --bg: #07100b;
   --bg-deep: #040a07;
   --bg-raised: #0c1710;
 
   --ink: #f4f3ef;
+
   --muted: #8f9890;
   --muted-bright: #b8beb9;
 
@@ -96,12 +148,17 @@
   --green: #6f9b6d;
   --green-dim: #334d38;
 
-  --border: rgba(154, 174, 145, 0.20);
-  --border-bright: rgba(190, 181, 103, 0.38);
+  --border: rgba(154,174,145,0.20);
+  --border-bright: rgba(190,181,103,0.38);
 
   --rail-width: 128px;
-  --content-max: 1250px;
+
 }
+
+
+/* =====================================================
+   GLOBAL
+===================================================== */
 
 * {
   box-sizing: border-box;
@@ -114,53 +171,74 @@ html {
 }
 
 body {
+
   background:
     radial-gradient(
       circle at 76% 9%,
-      rgba(55, 87, 59, 0.18),
+      rgba(55,87,59,0.18),
       transparent 30%
     ),
     radial-gradient(
       circle at 72% 35%,
-      rgba(74, 102, 58, 0.08),
+      rgba(74,102,58,0.08),
       transparent 35%
     ),
     var(--bg);
+
   color: var(--ink);
-  font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  font-family:
+    'Space Grotesk',
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+
   -webkit-font-smoothing: antialiased;
+
   overflow-x: hidden;
 }
 
-/* ---------------------------------------------------------
-   BACKGROUND EFFECTS
---------------------------------------------------------- */
+
+/* =====================================================
+   BACKGROUND
+===================================================== */
 
 .background-glow {
+
   position: fixed;
+
   width: 60vw;
   height: 60vw;
+
   right: -15vw;
   top: -18vw;
 
   background:
     radial-gradient(
       circle,
-      rgba(75, 111, 68, 0.22) 0%,
-      rgba(50, 75, 48, 0.10) 35%,
+      rgba(75,111,68,0.22) 0%,
+      rgba(50,75,48,0.10) 35%,
       transparent 70%
     );
 
   filter: blur(50px);
+
   pointer-events: none;
+
   z-index: 0;
 }
 
+
 .grid-lines {
+
   position: fixed;
+
   inset: 0;
+
   pointer-events: none;
+
   z-index: 0;
+
   opacity: 0.045;
 
   background-image:
@@ -176,54 +254,71 @@ body {
 
   background-size: 100px 100px;
 
-  mask-image: linear-gradient(
-    to bottom,
-    black,
-    transparent 70%
-  );
+  mask-image:
+    linear-gradient(
+      to bottom,
+      black,
+      transparent 70%
+    );
 }
 
-/* ---------------------------------------------------------
-   LEFT NAVIGATION RAIL
---------------------------------------------------------- */
+
+/* =====================================================
+   DESKTOP LEFT RAIL
+===================================================== */
 
 nav.rail {
+
   position: fixed;
+
   inset: 0 auto 0 0;
+
   width: var(--rail-width);
 
   display: flex;
+
   flex-direction: column;
+
   align-items: center;
+
   justify-content: center;
 
-  border-right: 1px solid rgba(140, 159, 137, 0.16);
+  border-right:
+    1px solid rgba(140,159,137,0.16);
 
   background:
     linear-gradient(
       180deg,
-      rgba(5, 13, 8, 0.95),
-      rgba(5, 12, 8, 0.76)
+      rgba(5,13,8,0.95),
+      rgba(5,12,8,0.76)
     );
 
   z-index: 100;
 }
 
+
 .rail-logo {
+
   position: absolute;
+
   top: 24px;
+
   left: 0;
   right: 0;
 
   display: flex;
+
   justify-content: center;
 }
 
+
 .rail-logo-chip {
+
   width: 64px;
   height: 64px;
 
   display: flex;
+
   align-items: center;
   justify-content: center;
 
@@ -231,32 +326,45 @@ nav.rail {
 
   border-radius: 16px;
 
-  background: rgba(244, 242, 238, 0.96);
+  background:
+    rgba(244,242,238,0.96);
 
   box-shadow:
     0 12px 35px rgba(0,0,0,0.25);
 }
 
+
 .rail-logo-chip img {
+
   width: 100%;
   height: 100%;
+
   object-fit: contain;
 }
 
+
 nav.rail a {
+
   position: relative;
 
   width: 100%;
 
-  padding: 15px 0 15px 28px;
+  padding:
+    15px 0 15px 28px;
 
-  border-left: 2px solid transparent;
+  border-left:
+    2px solid transparent;
 
   color: #858d86;
 
-  font-family: 'JetBrains Mono', monospace;
+  font-family:
+    'JetBrains Mono',
+    monospace;
+
   font-size: 0.72rem;
+
   letter-spacing: 0.14em;
+
   text-transform: uppercase;
 
   text-decoration: none;
@@ -267,211 +375,299 @@ nav.rail a {
     background 0.25s ease;
 }
 
+
 nav.rail a:first-of-type {
   margin-top: 60px;
 }
 
+
 nav.rail a:hover,
 nav.rail a.active {
+
   color: var(--fox-bright);
-  border-left-color: var(--fox-bright);
-  background: linear-gradient(
-    90deg,
-    rgba(197,170,80,0.08),
-    transparent
-  );
+
+  border-left-color:
+    var(--fox-bright);
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(197,170,80,0.08),
+      transparent
+    );
 }
 
+
 .rail-logo-bottom {
+
   position: absolute;
+
   bottom: 22px;
+
   left: 0;
   right: 0;
 
   display: flex;
+
   justify-content: center;
 }
 
+
 .rail-logo-bottom-chip {
+
   width: 42px;
   height: 42px;
 
   padding: 7px;
 
   display: flex;
+
   align-items: center;
   justify-content: center;
 
   border-radius: 11px;
 
-  background: rgba(244, 242, 238, 0.45);
+  background:
+    rgba(244,242,238,0.45);
 
-  transition: background 0.2s ease;
+  transition:
+    background 0.2s ease;
 }
+
 
 .rail-logo-bottom-chip:hover {
-  background: rgba(244, 242, 238, 0.85);
+  background:
+    rgba(244,242,238,0.85);
 }
 
+
 .rail-logo-bottom-chip img {
+
   width: 100%;
   height: 100%;
+
   object-fit: contain;
 }
 
-/* ---------------------------------------------------------
-   MAIN CONTENT
---------------------------------------------------------- */
+
+/* =====================================================
+   MAIN
+===================================================== */
 
 main {
+
   position: relative;
+
   z-index: 1;
 
-  width: calc(100% - var(--rail-width));
-  margin-left: var(--rail-width);
+  width:
+    calc(100% - var(--rail-width));
+
+  margin-left:
+    var(--rail-width);
 
   max-width: 1500px;
 
-  padding: 0 5.5vw 80px;
+  padding:
+    0 5.5vw 80px;
 }
 
-/* ---------------------------------------------------------
-   TOP HEADER
---------------------------------------------------------- */
+
+/* =====================================================
+   TOP BAR
+===================================================== */
 
 header.top {
+
   height: 100px;
 
   display: flex;
+
   align-items: center;
+
   justify-content: space-between;
 
-  border-bottom: 1px solid rgba(139, 157, 135, 0.16);
+  border-bottom:
+    1px solid rgba(139,157,135,0.16);
 
-  font-family: 'JetBrains Mono', monospace;
+  font-family:
+    'JetBrains Mono',
+    monospace;
+
   font-size: 0.68rem;
+
   letter-spacing: 0.17em;
+
   text-transform: uppercase;
 
   color: #858d86;
 }
 
+
 header.top .mark {
+
   color: var(--ink);
+
   font-weight: 500;
+
   letter-spacing: 0.22em;
 }
 
+
 .location {
+
   display: flex;
+
   align-items: center;
+
   gap: 12px;
 }
 
+
 .location::after {
+
   content: "";
+
   width: 4px;
   height: 4px;
+
   border-radius: 50%;
+
   background: var(--green);
-  box-shadow: 0 0 8px rgba(111,155,109,0.8);
+
+  box-shadow:
+    0 0 8px rgba(111,155,109,0.8);
 }
 
-/* ---------------------------------------------------------
+
+/* =====================================================
    HERO
---------------------------------------------------------- */
+===================================================== */
 
 #home {
+
   position: relative;
 
   min-height: 610px;
 
   display: flex;
+
   align-items: center;
 
-  padding: 70px 0 85px;
+  padding:
+    70px 0 85px;
 
   overflow: visible;
 }
 
+
 .hero-content {
+
   position: relative;
+
   z-index: 4;
 
   width: 53%;
 }
 
+
 .eyebrow {
+
   display: flex;
+
   align-items: center;
+
   gap: 18px;
 
   margin-bottom: 28px;
 
   color: var(--fox-bright);
 
-  font-family: 'JetBrains Mono', monospace;
+  font-family:
+    'JetBrains Mono',
+    monospace;
+
   font-size: 0.72rem;
+
   letter-spacing: 0.21em;
+
   text-transform: uppercase;
 }
 
+
 .eyebrow::before {
+
   content: "";
 
   width: 31px;
   height: 2px;
 
-  background: var(--fox-bright);
+  background:
+    var(--fox-bright);
 
   box-shadow:
     0 0 10px rgba(224,197,102,0.35);
 }
 
+
 h1 {
+
   max-width: 720px;
 
-  font-size: clamp(
-    3.8rem,
-    6.2vw,
-    6.3rem
-  );
+  font-size:
+    clamp(
+      3.8rem,
+      6.2vw,
+      6.3rem
+    );
 
   font-weight: 700;
 
   letter-spacing: -0.055em;
+
   line-height: 0.96;
 }
 
+
 .lede {
+
   max-width: 580px;
 
   margin-top: 32px;
 
   color: #9ca39d;
 
-  font-size: clamp(
-    1.05rem,
-    1.5vw,
-    1.35rem
-  );
+  font-size:
+    clamp(
+      1.05rem,
+      1.5vw,
+      1.35rem
+    );
 
   line-height: 1.7;
 }
 
-/* ---------------------------------------------------------
-   FOX HERO GRAPHIC
---------------------------------------------------------- */
+
+/* =====================================================
+   FOX GRAPHIC
+===================================================== */
 
 .hero-art {
+
   position: absolute;
 
   z-index: 2;
 
   top: 50%;
+
   right: -5%;
 
-  width: min(65vw, 900px);
+  width:
+    clamp(
+      520px,
+      58vw,
+      900px
+    );
 
   transform:
     translateY(-50%);
@@ -481,16 +677,20 @@ h1 {
   user-select: none;
 }
 
+
 .hero-art::before {
+
   content: "";
 
   position: absolute;
-  inset: 10% 0 5% 15%;
+
+  inset:
+    10% 0 5% 15%;
 
   background:
     radial-gradient(
       ellipse,
-      rgba(73, 117, 71, 0.20),
+      rgba(73,117,71,0.20),
       transparent 67%
     );
 
@@ -499,24 +699,35 @@ h1 {
   z-index: -1;
 }
 
+
 .hero-art img {
+
   display: block;
 
   width: 100%;
+
   height: auto;
 
   opacity: 0.96;
 
   filter:
-    drop-shadow(0 0 18px rgba(79, 121, 72, 0.18))
-    drop-shadow(0 0 38px rgba(197, 170, 80, 0.08));
+    drop-shadow(
+      0 0 18px
+      rgba(79,121,72,0.18)
+    )
+    drop-shadow(
+      0 0 38px
+      rgba(197,170,80,0.08)
+    );
 }
 
-/* Fade left edge into the website background */
+
 .hero-art::after {
+
   content: "";
 
   position: absolute;
+
   inset: 0;
 
   background:
@@ -531,93 +742,129 @@ h1 {
   pointer-events: none;
 }
 
-/* Small technical coordinates */
+
 .hero-coordinates {
+
   position: absolute;
 
   right: 12%;
+
   bottom: 22%;
 
-  color: rgba(170, 176, 163, 0.52);
+  color:
+    rgba(170,176,163,0.52);
 
-  font-family: 'JetBrains Mono', monospace;
+  font-family:
+    'JetBrains Mono',
+    monospace;
+
   font-size: 0.54rem;
+
   letter-spacing: 0.08em;
+
   line-height: 1.7;
 
   z-index: 5;
 }
 
-/* ---------------------------------------------------------
+
+/* =====================================================
    SECTIONS
---------------------------------------------------------- */
+===================================================== */
 
 section {
+
   position: relative;
 
   padding: 78px 0;
 
-  border-top: 1px solid var(--border);
+  border-top:
+    1px solid var(--border);
 
   opacity: 0;
-  transform: translateY(18px);
+
+  transform:
+    translateY(18px);
 
   transition:
     opacity 0.7s ease,
     transform 0.7s ease;
 }
 
+
 section.visible {
+
   opacity: 1;
-  transform: translateY(0);
+
+  transform:
+    translateY(0);
 }
 
+
 #home {
+
   opacity: 1;
+
   transform: none;
 }
 
+
 .section-label {
+
   display: flex;
+
   align-items: center;
+
   gap: 18px;
 
   margin-bottom: 32px;
 
   color: #9ca39d;
 
-  font-family: 'JetBrains Mono', monospace;
+  font-family:
+    'JetBrains Mono',
+    monospace;
+
   font-size: 0.72rem;
+
   letter-spacing: 0.2em;
+
   text-transform: uppercase;
 }
 
+
 .section-label::before {
+
   content: "";
 
   width: 22px;
   height: 2px;
 
-  background: var(--fox-bright);
+  background:
+    var(--fox-bright);
 }
 
-/* ---------------------------------------------------------
+
+/* =====================================================
    FOUNDER
---------------------------------------------------------- */
+===================================================== */
 
 .founder-grid {
+
   display: grid;
 
   grid-template-columns:
-    minmax(250px, 330px)
-    minmax(0, 1fr);
+    minmax(250px,330px)
+    minmax(0,1fr);
 
   gap: 55px;
 
   align-items: center;
 }
 
+
 .founder-photo {
+
   position: relative;
 
   width: 100%;
@@ -628,7 +875,8 @@ section.visible {
 
   border-radius: 18px;
 
-  border: 1px solid rgba(150, 160, 146, 0.24);
+  border:
+    1px solid rgba(150,160,146,0.24);
 
   background: #111;
 
@@ -636,10 +884,13 @@ section.visible {
     0 25px 70px rgba(0,0,0,0.30);
 }
 
+
 .founder-photo::after {
+
   content: "";
 
   position: absolute;
+
   inset: 0;
 
   background:
@@ -653,7 +904,9 @@ section.visible {
   pointer-events: none;
 }
 
+
 .founder-photo img {
+
   width: 100%;
   height: 100%;
 
@@ -662,74 +915,96 @@ section.visible {
   object-position: center;
 }
 
+
 .founder-copy h2 {
+
   margin-bottom: 18px;
 
-  font-size: clamp(
-    2.2rem,
-    4vw,
-    3.5rem
-  );
+  font-size:
+    clamp(
+      2.2rem,
+      4vw,
+      3.5rem
+    );
 
   line-height: 1;
 
   letter-spacing: -0.045em;
 }
 
+
 .bio {
+
   max-width: 720px;
 
   color: #9ca39d;
 
   font-size: 1.08rem;
+
   line-height: 1.75;
 }
 
+
 .bio strong {
+
   color: var(--ink);
+
   font-weight: 600;
 }
 
+
 .origin {
+
   max-width: 700px;
 
   margin-top: 27px;
-  padding: 4px 0 4px 22px;
 
-  border-left: 2px solid var(--fox-dim);
+  padding:
+    4px 0 4px 22px;
+
+  border-left:
+    2px solid var(--fox-dim);
 
   color: #a2a6a1;
 
   font-size: 0.98rem;
+
   font-style: italic;
 
   line-height: 1.75;
 }
 
-/* ---------------------------------------------------------
+
+/* =====================================================
    PROJECTS
---------------------------------------------------------- */
+===================================================== */
 
 .product-grid {
+
   display: grid;
+
   gap: 17px;
 }
 
+
 .product {
+
   position: relative;
 
-  border: 1px solid var(--border);
+  border:
+    1px solid var(--border);
 
   background:
     linear-gradient(
       135deg,
-      rgba(20, 34, 23, 0.85),
-      rgba(7, 15, 10, 0.92)
+      rgba(20,34,23,0.85),
+      rgba(7,15,10,0.92)
     );
 
   border-radius: 16px;
 
-  padding: 30px 32px;
+  padding:
+    30px 32px;
 
   cursor: pointer;
 
@@ -741,23 +1016,30 @@ section.visible {
     background 0.25s ease;
 }
 
+
 .product:hover {
-  border-color: var(--border-bright);
+
+  border-color:
+    var(--border-bright);
 
   background:
     linear-gradient(
       135deg,
-      rgba(24, 42, 28, 0.92),
-      rgba(7, 15, 10, 0.96)
+      rgba(24,42,28,0.92),
+      rgba(7,15,10,0.96)
     );
 
-  transform: translateY(-2px);
+  transform:
+    translateY(-2px);
 }
 
+
 .product-top {
+
   display: flex;
 
   justify-content: space-between;
+
   align-items: flex-start;
 
   gap: 19px;
@@ -765,59 +1047,88 @@ section.visible {
   margin-bottom: 12px;
 }
 
+
 .product-name {
+
   display: flex;
+
   align-items: center;
+
   gap: 12px;
 
   font-size: 1.44rem;
+
   font-weight: 600;
 
   letter-spacing: -0.012em;
 }
 
+
 .chevron {
+
   display: inline-block;
 
   color: var(--fox);
 
-  font-family: 'JetBrains Mono', monospace;
+  font-family:
+    'JetBrains Mono',
+    monospace;
+
   font-size: 1.08rem;
 
-  transition: transform 0.3s ease;
+  transition:
+    transform 0.3s ease;
 }
+
 
 .product.open .chevron {
-  transform: rotate(90deg);
+
+  transform:
+    rotate(90deg);
 }
 
+
 .status {
+
   white-space: nowrap;
 
-  padding: 5px 12px;
+  padding:
+    5px 12px;
 
-  border: 1px solid var(--fox-dim);
+  border:
+    1px solid var(--fox-dim);
+
   border-radius: 999px;
 
-  background: rgba(197, 170, 80, 0.07);
+  background:
+    rgba(197,170,80,0.07);
 
   color: var(--fox);
 
-  font-family: 'JetBrains Mono', monospace;
+  font-family:
+    'JetBrains Mono',
+    monospace;
+
   font-size: 0.7rem;
+
   letter-spacing: 0.06em;
 }
 
+
 .product-desc {
+
   max-width: 720px;
 
   color: var(--muted);
 
   font-size: 1.05rem;
+
   line-height: 1.55;
 }
 
+
 .product-detail {
+
   max-height: 0;
 
   overflow: hidden;
@@ -827,52 +1138,78 @@ section.visible {
     margin-top 0.4s ease;
 }
 
+
 .product.open .product-detail {
+
   max-height: 300px;
+
   margin-top: 22px;
 }
 
+
 .product-detail-inner {
+
   display: flex;
+
   flex-direction: column;
+
   gap: 12px;
 
   padding-top: 22px;
 
-  border-top: 1px solid var(--border);
+  border-top:
+    1px solid var(--border);
 }
 
+
 .tag-row {
+
   display: flex;
+
   flex-wrap: wrap;
+
   gap: 10px;
 }
 
-.tag {
-  padding: 4px 12px;
 
-  border: 1px solid var(--border);
+.tag {
+
+  padding:
+    4px 12px;
+
+  border:
+    1px solid var(--border);
+
   border-radius: 999px;
 
   color: var(--muted);
 
-  font-family: 'JetBrains Mono', monospace;
+  font-family:
+    'JetBrains Mono',
+    monospace;
+
   font-size: 0.7rem;
 }
 
+
 .product-detail p {
+
   max-width: 720px;
 
   color: var(--muted);
 
   font-size: 0.98rem;
+
   line-height: 1.6;
 }
 
+
 .product.placeholder {
+
   display: flex;
 
   align-items: center;
+
   justify-content: center;
 
   min-height: 90px;
@@ -881,64 +1218,85 @@ section.visible {
 
   color: var(--muted);
 
-  font-family: 'JetBrains Mono', monospace;
+  font-family:
+    'JetBrains Mono',
+    monospace;
+
   font-size: 0.9rem;
 
   cursor: default;
 }
 
+
 .product.placeholder:hover {
+
   transform: none;
 
-  border-color: var(--border);
+  border-color:
+    var(--border);
 
-  background: rgba(7,15,10,0.7);
+  background:
+    rgba(7,15,10,0.7);
 }
 
-/* ---------------------------------------------------------
+
+/* =====================================================
    CONTACT
---------------------------------------------------------- */
+===================================================== */
 
 .contact-grid {
+
   display: grid;
 
   grid-template-columns:
-    minmax(0, 1fr)
-    minmax(300px, 450px);
+    minmax(0,1fr)
+    minmax(300px,450px);
 
   gap: 70px;
 
   align-items: start;
 }
 
+
 .contact-copy .bio {
+
   max-width: 500px;
 }
 
+
 .contact-links {
+
   display: flex;
+
   flex-direction: column;
+
   gap: 12px;
 }
 
+
 .contact-link {
+
   display: flex;
 
   justify-content: space-between;
+
   align-items: center;
 
   min-height: 74px;
 
-  padding: 15px 22px;
+  padding:
+    15px 22px;
 
-  border: 1px solid var(--border);
+  border:
+    1px solid var(--border);
+
   border-radius: 12px;
 
   background:
     linear-gradient(
       180deg,
-      rgba(17, 29, 20, 0.78),
-      rgba(8, 16, 11, 0.82)
+      rgba(17,29,20,0.78),
+      rgba(8,16,11,0.82)
     );
 
   text-decoration: none;
@@ -949,113 +1307,161 @@ section.visible {
     background 0.25s ease;
 }
 
-.contact-link:hover {
-  border-color: var(--border-bright);
 
-  transform: translateX(4px);
+.contact-link:hover {
+
+  border-color:
+    var(--border-bright);
+
+  transform:
+    translateX(4px);
 
   background:
     linear-gradient(
       180deg,
-      rgba(24, 40, 26, 0.86),
-      rgba(8, 16, 11, 0.9)
+      rgba(24,40,26,0.86),
+      rgba(8,16,11,0.9)
     );
 }
 
+
 .contact-link-left {
+
   display: flex;
+
   align-items: center;
+
   gap: 16px;
 }
 
+
 .contact-icon {
+
   width: 34px;
 
-  color: var(--fox-bright);
+  color:
+    var(--fox-bright);
 
-  font-family: 'JetBrains Mono', monospace;
+  font-family:
+    'JetBrains Mono',
+    monospace;
+
   font-size: 1.1rem;
 
   text-align: center;
 }
 
+
 .contact-link-text {
+
   display: flex;
+
   flex-direction: column;
+
   gap: 3px;
 }
 
+
 .contact-link-label {
+
   color: var(--fox);
 
-  font-family: 'JetBrains Mono', monospace;
+  font-family:
+    'JetBrains Mono',
+    monospace;
+
   font-size: 0.64rem;
+
   letter-spacing: 0.13em;
+
   text-transform: uppercase;
 }
 
+
 .contact-link-value {
+
   color: var(--ink);
 
   font-size: 0.98rem;
 }
 
+
 .contact-arrow {
+
   color: var(--fox);
 
-  font-family: 'JetBrains Mono', monospace;
+  font-family:
+    'JetBrains Mono',
+    monospace;
+
   font-size: 1.1rem;
 }
 
-/* ---------------------------------------------------------
+
+/* =====================================================
    FOOTER
---------------------------------------------------------- */
+===================================================== */
 
 footer {
+
   display: flex;
 
   justify-content: space-between;
+
   align-items: center;
 
   padding-top: 30px;
 
   color: #687169;
 
-  font-family: 'JetBrains Mono', monospace;
+  font-family:
+    'JetBrains Mono',
+    monospace;
+
   font-size: 0.68rem;
+
   letter-spacing: 0.05em;
 }
 
+
 footer .links {
+
   display: flex;
+
   gap: 28px;
 }
 
+
 footer a {
+
   color: #a0a69f;
 
   text-decoration: none;
 
   transition:
-    color 0.2s ease,
-    border-color 0.2s ease;
+    color 0.2s ease;
 }
+
 
 footer a:hover {
-  color: var(--fox-bright);
+
+  color:
+    var(--fox-bright);
 }
 
-/* ---------------------------------------------------------
+
+/* =====================================================
    MOBILE NAV
---------------------------------------------------------- */
+===================================================== */
 
 .mobile-nav {
   display: none;
 }
 
-/* ---------------------------------------------------------
-   RESPONSIVE
---------------------------------------------------------- */
+
+/* =====================================================
+   TABLET
+===================================================== */
 
 @media (max-width: 1050px) {
 
@@ -1063,39 +1469,62 @@ footer a:hover {
     --rail-width: 105px;
   }
 
+
   main {
+
     padding-left: 5vw;
+
     padding-right: 5vw;
   }
+
 
   .hero-content {
     width: 61%;
   }
 
+
   .hero-art {
-    width: 65vw;
+
+    width:
+      65vw;
+
     right: -13%;
   }
 
+
   .founder-grid {
-    grid-template-columns: 260px minmax(0,1fr);
+
+    grid-template-columns:
+      260px
+      minmax(0,1fr);
+
     gap: 40px;
   }
 
 }
 
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
 @media (max-width: 760px) {
+
 
   body {
     padding-bottom: 72px;
   }
 
+
   nav.rail {
     display: none;
   }
 
+
   main {
+
     width: 100%;
+
     margin-left: 0;
 
     padding:
@@ -1104,54 +1533,87 @@ footer a:hover {
       60px;
   }
 
+
+  /* -----------------------------------------------------
+     MOBILE HEADER
+  ----------------------------------------------------- */
+
   header.top {
+
     height: 78px;
 
     font-size: 0.58rem;
   }
 
+
   header.top .mark {
-    letter-spacing: 0.14em;
+
+    letter-spacing:
+      0.14em;
   }
+
 
   .location {
     display: none;
   }
 
+
+  /* -----------------------------------------------------
+     MOBILE HERO
+  ----------------------------------------------------- */
+
   #home {
-    min-height: 680px;
+
+    min-height: 650px;
 
     display: block;
 
     padding:
-      75px 0
-      45px;
+      75px 0 45px;
+
+    /*
+      IMPORTANT:
+      The fox is intentionally allowed to extend beyond
+      the right side of the hero image itself, but NOT
+      beyond the viewport.
+    */
+    overflow: hidden;
   }
 
+
   .hero-content {
+
     width: 100%;
 
     position: relative;
+
     z-index: 5;
   }
 
+
   .eyebrow {
+
     font-size: 0.62rem;
 
     margin-bottom: 24px;
   }
 
+
   h1 {
+
     max-width: 10ch;
 
-    font-size: clamp(
-      3.1rem,
-      13vw,
-      4.8rem
-    );
+    font-size:
+      clamp(
+        3.1rem,
+        13vw,
+        4.8rem
+      );
   }
 
+
   .lede {
+
     max-width: 90%;
 
     margin-top: 27px;
@@ -1161,87 +1623,177 @@ footer a:hover {
     line-height: 1.65;
   }
 
+
+  /* -----------------------------------------------------
+     MOBILE FOX
+
+     The PNG is 1536px wide and the actual fox occupies
+     the right portion of that canvas.
+
+     On desktop we leave the positioning alone.
+
+     On mobile we move the ENTIRE image left so that
+     the fox itself — rather than the empty left side of
+     the image — sits inside the phone viewport.
+  ----------------------------------------------------- */
+
   .hero-art {
-    width: 125vw;
+
+    width: 95vw;
+
+    max-width: 520px;
 
     top: auto;
-    bottom: -40px;
-    right: -45vw;
+
+    bottom: 5px;
+
+    right: 24vw;
 
     transform: none;
 
-    opacity: 0.72;
+    opacity: 0.58;
   }
 
+
+  .hero-art img {
+
+    width: 100%;
+
+    height: auto;
+
+    display: block;
+  }
+
+
   .hero-art::after {
+
     background:
+
       linear-gradient(
         180deg,
         var(--bg) 0%,
-        rgba(7,16,11,0.05) 38%,
-        rgba(7,16,11,0.15) 70%,
+        rgba(7,16,11,0.12) 27%,
+        transparent 55%,
         var(--bg) 100%
       ),
+
       linear-gradient(
         90deg,
         var(--bg) 0%,
-        transparent 45%
+        rgba(7,16,11,0.12) 22%,
+        transparent 55%
       );
   }
+
 
   .hero-coordinates {
     display: none;
   }
 
+
+  /* -----------------------------------------------------
+     MOBILE SECTIONS
+  ----------------------------------------------------- */
+
   section {
-    padding: 58px 0;
+
+    padding:
+      58px 0;
   }
 
+
+  /* -----------------------------------------------------
+     MOBILE FOUNDER
+  ----------------------------------------------------- */
+
   .founder-grid {
-    grid-template-columns: 1fr;
+
+    grid-template-columns:
+      1fr;
 
     gap: 30px;
   }
 
+
   .founder-photo {
+
     max-width: 300px;
   }
 
+
   .founder-copy h2 {
-    font-size: 2.5rem;
+
+    font-size:
+      2.5rem;
   }
 
+
+  /* -----------------------------------------------------
+     MOBILE PROJECTS
+  ----------------------------------------------------- */
+
+  .product {
+
+    padding:
+      24px 21px;
+  }
+
+
+  .product-top {
+
+    flex-direction: column;
+
+    gap: 12px;
+  }
+
+
+  .status {
+
+    align-self:
+      flex-start;
+  }
+
+
+  /* -----------------------------------------------------
+     MOBILE CONTACT
+  ----------------------------------------------------- */
+
   .contact-grid {
-    grid-template-columns: 1fr;
+
+    grid-template-columns:
+      1fr;
 
     gap: 35px;
   }
 
-  .product {
-    padding: 24px 21px;
-  }
 
-  .product-top {
-    flex-direction: column;
-    gap: 12px;
-  }
-
-  .status {
-    align-self: flex-start;
-  }
+  /* -----------------------------------------------------
+     MOBILE FOOTER
+  ----------------------------------------------------- */
 
   footer {
-    flex-direction: column;
-    align-items: flex-start;
+
+    flex-direction:
+      column;
+
+    align-items:
+      flex-start;
 
     gap: 18px;
   }
 
+
+  /* -----------------------------------------------------
+     MOBILE BOTTOM NAV
+  ----------------------------------------------------- */
+
   .mobile-nav {
+
     position: fixed;
 
     left: 12px;
     right: 12px;
+
     bottom: 12px;
 
     height: 58px;
@@ -1249,40 +1801,119 @@ footer a:hover {
     display: flex;
 
     align-items: center;
+
     justify-content: space-around;
 
     z-index: 200;
 
-    border: 1px solid rgba(157, 174, 150, 0.22);
+    border:
+      1px solid rgba(157,174,150,0.22);
+
     border-radius: 16px;
 
     background:
-      rgba(6, 14, 9, 0.91);
+      rgba(6,14,9,0.91);
 
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
+    backdrop-filter:
+      blur(18px);
+
+    -webkit-backdrop-filter:
+      blur(18px);
 
     box-shadow:
       0 15px 40px rgba(0,0,0,0.35);
   }
 
+
   .mobile-nav a {
-    color: #818a83;
 
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.57rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
+    color:
+      #818a83;
 
-    text-decoration: none;
+    font-family:
+      'JetBrains Mono',
+      monospace;
+
+    font-size:
+      0.57rem;
+
+    letter-spacing:
+      0.1em;
+
+    text-transform:
+      uppercase;
+
+    text-decoration:
+      none;
   }
+
 
   .mobile-nav a.active,
   .mobile-nav a:hover {
-    color: var(--fox-bright);
+
+    color:
+      var(--fox-bright);
   }
 
 }
+
+
+/* =====================================================
+   VERY SMALL PHONES
+===================================================== */
+
+@media (max-width: 390px) {
+
+
+  #home {
+
+    min-height: 625px;
+
+    padding-top: 62px;
+  }
+
+
+  h1 {
+
+    font-size:
+      3.05rem;
+  }
+
+
+  /*
+     On smaller iPhones, move the image even farther
+     left because the fox occupies the right side of
+     the source PNG.
+  */
+
+  .hero-art {
+
+    width: 100vw;
+
+    max-width: none;
+
+    right: 22vw;
+
+    bottom: 0;
+
+    opacity: 0.55;
+  }
+
+
+  .lede {
+
+    max-width: 95%;
+
+    font-size:
+      0.96rem;
+  }
+
+}
+
+
+/* =====================================================
+   REDUCED MOTION
+===================================================== */
 
 @media (prefers-reduced-motion: reduce) {
 
@@ -1290,39 +1921,55 @@ footer a:hover {
     scroll-behavior: auto;
   }
 
+
   section,
   .product,
   .hero-art,
   .contact-link,
   .chevron {
+
     transition: none;
   }
 
 }
 
 </style>
+
 </head>
+
 
 <body>
 
+
+<!-- =====================================================
+     BACKGROUND
+===================================================== -->
+
 <div class="background-glow"></div>
+
 <div class="grid-lines"></div>
 
 
-<!-- ======================================================
-     DESKTOP NAVIGATION
-====================================================== -->
+<!-- =====================================================
+     DESKTOP NAV
+===================================================== -->
 
 <nav class="rail">
 
+
   <div class="rail-logo">
+
     <div class="rail-logo-chip">
+
       <img
         src="greenfox-logo-transparent 2026-08-11.png"
         alt="Greenfox Ventures LLC"
       >
+
     </div>
+
   </div>
+
 
   <a
     href="#home"
@@ -1332,6 +1979,7 @@ footer a:hover {
     Home
   </a>
 
+
   <a
     href="#about"
     class="nav-link"
@@ -1339,6 +1987,7 @@ footer a:hover {
   >
     Founder
   </a>
+
 
   <a
     href="#projects"
@@ -1348,6 +1997,7 @@ footer a:hover {
     Projects
   </a>
 
+
   <a
     href="#contact"
     class="nav-link"
@@ -1356,23 +2006,30 @@ footer a:hover {
     Contact
   </a>
 
+
   <div class="rail-logo-bottom">
+
     <div class="rail-logo-bottom-chip">
+
       <img
         src="greenfox-logo-transparent 2026-08-11.png"
         alt=""
       >
+
     </div>
+
   </div>
+
 
 </nav>
 
 
-<!-- ======================================================
-     MOBILE NAVIGATION
-====================================================== -->
+<!-- =====================================================
+     MOBILE NAV
+===================================================== -->
 
 <nav class="mobile-nav">
+
 
   <a
     href="#home"
@@ -1382,6 +2039,7 @@ footer a:hover {
     Home
   </a>
 
+
   <a
     href="#about"
     class="mobile-nav-link"
@@ -1389,6 +2047,7 @@ footer a:hover {
   >
     Founder
   </a>
+
 
   <a
     href="#projects"
@@ -1398,6 +2057,7 @@ footer a:hover {
     Projects
   </a>
 
+
   <a
     href="#contact"
     class="mobile-nav-link"
@@ -1406,25 +2066,27 @@ footer a:hover {
     Contact
   </a>
 
+
 </nav>
 
 
-<!-- ======================================================
+<!-- =====================================================
      MAIN
-====================================================== -->
+===================================================== -->
 
 <main>
 
 
-  <!-- ====================================================
-       TOP HEADER
-  ===================================================== -->
+  <!-- ===================================================
+       TOP BAR
+  ==================================================== -->
 
   <header class="top">
 
     <div class="mark">
       GREENFOX VENTURES
     </div>
+
 
     <div class="location">
       STAMFORD, CT
@@ -1433,21 +2095,25 @@ footer a:hover {
   </header>
 
 
-  <!-- ====================================================
+  <!-- ===================================================
        HERO
-  ===================================================== -->
+  ==================================================== -->
 
   <section id="home">
 
+
     <div class="hero-content">
+
 
       <div class="eyebrow">
         Independent software studio
       </div>
 
+
       <h1>
         We build things worth finishing.
       </h1>
+
 
       <p class="lede">
         Greenfox Ventures LLC is a Connecticut-based studio.
@@ -1455,10 +2121,16 @@ footer a:hover {
         &mdash; just software we'd want to use ourselves.
       </p>
 
+
     </div>
 
 
+    <!-- =================================================
+         FOX GRAPHIC
+    ================================================== -->
+
     <div class="hero-art">
+
 
       <img
         src="https://raw.githubusercontent.com/Greenfox-Ventures-LLC/greenfox-ventures-llc.github.io/main/Fox_Graphic_dots.png"
@@ -1466,29 +2138,36 @@ footer a:hover {
         aria-hidden="true"
       >
 
+
       <div class="hero-coordinates">
         41.0534° N<br>
         73.5387° W
       </div>
 
+
     </div>
+
 
   </section>
 
 
-  <!-- ====================================================
+  <!-- ===================================================
        FOUNDER
-  ===================================================== -->
+  ==================================================== -->
 
   <section id="about">
+
 
     <div class="section-label">
       Founder
     </div>
 
+
     <div class="founder-grid">
 
+
       <div class="founder-photo">
+
 
         <img
           src="https://raw.githubusercontent.com/Greenfox-Ventures-LLC/greenfox-ventures-llc.github.io/main/Alex_Furer_Headshot.png"
@@ -1496,77 +2175,92 @@ footer a:hover {
           loading="lazy"
         >
 
+
       </div>
 
 
       <div class="founder-copy">
 
+
         <h2>
           Alex Furer
         </h2>
 
+
         <p class="bio">
+
           <strong>Alex Furer</strong> has spent nearly two decades
           in finance leadership roles at technology companies,
           working closely with product and engineering teams to
           turn complex systems into businesses that scale.
           Greenfox Ventures is a return to building directly
           &mdash; less strategy deck, more shipped software.
+
         </p>
 
+
         <div class="origin">
+
           Cavernum started from a familiar itch: playing puzzle
           games that were too easy to stay interesting, and
           wanting to see how hard the genre could actually get
           without losing what makes it satisfying.
+
         </div>
+
 
       </div>
 
+
     </div>
+
 
   </section>
 
 
-  <!-- ====================================================
+  <!-- ===================================================
        PROJECTS
-       
-       CAVERNUM CONTENT PRESERVED
-       No additional Cavernum assets required.
-  ===================================================== -->
+       CAVERNUM UNCHANGED
+  ==================================================== -->
 
   <section id="projects">
+
 
     <div class="section-label">
       Projects
     </div>
 
 
-    <div
-      class="product-grid"
-      style="display:grid; gap:17px;"
-    >
+    <div class="product-grid">
+
 
       <div
         class="product"
         id="cavernum-card"
       >
 
+
         <div class="product-top">
 
+
           <div class="product-name">
+
 
             <span class="chevron">
               &rsaquo;
             </span>
 
+
             Cavernum
 
+
           </div>
+
 
           <div class="status">
             In development
           </div>
+
 
         </div>
 
@@ -1581,39 +2275,51 @@ footer a:hover {
 
         <div class="product-detail">
 
+
           <div class="product-detail-inner">
 
+
             <div class="tag-row">
+
 
               <span class="tag">
                 iOS
               </span>
 
+
               <span class="tag">
                 Android
               </span>
+
 
               <span class="tag">
                 React Native
               </span>
 
+
               <span class="tag">
                 Puzzle
               </span>
+
 
             </div>
 
 
             <p>
+
               Pair adjacent tiles of equal value or summing to ten,
               navigate voids, rocks, and locked gates, and clear your
               way deeper into the mine. Built for players who want
               their puzzle games to actually push back.
+
             </p>
+
 
           </div>
 
+
         </div>
+
 
       </div>
 
@@ -1622,16 +2328,19 @@ footer a:hover {
         More on the way
       </div>
 
+
     </div>
+
 
   </section>
 
 
-  <!-- ====================================================
+  <!-- ===================================================
        CONTACT
-  ===================================================== -->
+  ==================================================== -->
 
   <section id="contact">
+
 
     <div class="section-label">
       Contact
@@ -1640,17 +2349,23 @@ footer a:hover {
 
     <div class="contact-grid">
 
+
       <div class="contact-copy">
 
+
         <p class="bio">
+
           Have a question, a bug report, or just want to say hi?
           Reach out directly.
+
         </p>
+
 
       </div>
 
 
       <div class="contact-links">
+
 
         <a
           href="#"
@@ -1659,29 +2374,38 @@ footer a:hover {
           data-domain="greenfoxventuresllc.com"
         >
 
+
           <span class="contact-link-left">
+
 
             <span class="contact-icon">
               @
             </span>
 
+
             <span class="contact-link-text">
+
 
               <span class="contact-link-label">
                 Email
               </span>
 
+
               <span class="contact-link-value email-value">
                 Click to reveal
               </span>
 
+
             </span>
 
+
           </span>
+
 
           <span class="contact-arrow">
             &rsaquo;
           </span>
+
 
         </a>
 
@@ -1693,50 +2417,65 @@ footer a:hover {
           rel="noopener noreferrer"
         >
 
+
           <span class="contact-link-left">
+
 
             <span class="contact-icon">
               in
             </span>
 
+
             <span class="contact-link-text">
+
 
               <span class="contact-link-label">
                 LinkedIn
               </span>
 
+
               <span class="contact-link-value">
                 alexander-furer
               </span>
 
+
             </span>
 
+
           </span>
+
 
           <span class="contact-arrow">
             &rsaquo;
           </span>
 
+
         </a>
+
 
       </div>
 
+
     </div>
+
 
   </section>
 
 
-  <!-- ====================================================
+  <!-- ===================================================
        FOOTER
-  ===================================================== -->
+  ==================================================== -->
 
   <footer>
+
 
     <div>
       &copy; 2026 Greenfox Ventures LLC
     </div>
 
+
     <div class="links">
+
 
       <a
         href="https://greenfox-ventures-llc.github.io/Cavernum-legal/"
@@ -1744,7 +2483,9 @@ footer a:hover {
         Privacy Policy
       </a>
 
+
     </div>
+
 
   </footer>
 
@@ -1754,9 +2495,9 @@ footer a:hover {
 
 <script>
 
-/* =========================================================
+/* =====================================================
    EMAIL REVEAL
-========================================================= */
+===================================================== */
 
 document
   .querySelectorAll('.contact-link[data-user]')
@@ -1788,29 +2529,31 @@ document
   });
 
 
-/* =========================================================
+/* =====================================================
    CAVERNUM EXPAND / COLLAPSE
-
-   Existing behavior preserved.
-========================================================= */
+===================================================== */
 
 document
   .getElementById('cavernum-card')
-  .addEventListener('click', function() {
+  .addEventListener(
+    'click',
+    function() {
 
-    this.classList.toggle('open');
+      this.classList.toggle('open');
 
-  });
+    }
+  );
 
 
-/* =========================================================
-   SECTION REVEAL ANIMATION
-========================================================= */
+/* =====================================================
+   SECTION REVEAL
+===================================================== */
 
 const sections =
   document.querySelectorAll(
     'section:not(#home)'
   );
+
 
 const observer =
   new IntersectionObserver(
@@ -1836,18 +2579,21 @@ const observer =
 
 
 sections.forEach(section => {
+
   observer.observe(section);
+
 });
 
 
-/* =========================================================
+/* =====================================================
    ACTIVE NAVIGATION
-========================================================= */
+===================================================== */
 
 const navLinks =
   document.querySelectorAll(
     '.nav-link, .mobile-nav-link'
   );
+
 
 const navObserver =
   new IntersectionObserver(
@@ -1860,11 +2606,13 @@ const navObserver =
           const target =
             entry.target.id;
 
+
           navLinks.forEach(link => {
 
             link.classList.remove(
               'active'
             );
+
 
             if (
               link.getAttribute(
@@ -1900,27 +2648,38 @@ document
   });
 
 
-/* =========================================================
-   SMOOTH MOBILE NAV
-========================================================= */
+/* =====================================================
+   MOBILE NAV ACTIVE STATE
+===================================================== */
 
 document
   .querySelectorAll('.mobile-nav a')
   .forEach(link => {
 
-    link.addEventListener('click', function() {
+    link.addEventListener(
+      'click',
+      function() {
 
-      navLinks.forEach(item => {
-        item.classList.remove('active');
-      });
+        navLinks.forEach(item => {
 
-      this.classList.add('active');
+          item.classList.remove(
+            'active'
+          );
 
-    });
+        });
+
+
+        this.classList.add(
+          'active'
+        );
+
+      }
+    );
 
   });
 
 </script>
+
 
 </body>
 </html>
